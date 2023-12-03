@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="#4294ff"
+        android:gravity="center"
+        android:text="Ứng dụng chụp hình và nhắc nhở chụp hình"
+        android:textColor="#000000" />
+
+    <!-- Add contentDescription -->
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:contentDescription="OPEN CAMERA"
+        android:src="@drawable/camera"
+        android:text="CAMERA" />
+
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imageButton" />
+</LinearLayout>
