@@ -1,7 +1,5 @@
 ![image](https://github.com/anhkhoadev/Android_Camera/assets/142555542/85deb1a6-a0be-4aa4-aefd-68cac4bfaf2b)
-
-Chỉ hiện thông báo khi có kết nối điện thoại với máy tính.
-
+Có thể hiện thông báo khi không bật ứng dụng, không kết nối với laptop.
 
 
 Giao diện khi chụp xong.
