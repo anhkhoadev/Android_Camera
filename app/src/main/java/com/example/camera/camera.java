@@ -29,7 +29,6 @@ public class camera extends Activity {
     public void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.main);
-        createNotificationChannels();
         // set thoi gian nhac chup hinh
         Intent intentTime = new Intent(camera.this, NotificationReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(camera.this, 0, intentTime, PendingIntent.FLAG_IMMUTABLE);
@@ -45,8 +44,8 @@ public class camera extends Activity {
         calendar.setTimeInMillis(System.currentTimeMillis());
 
 // Đặt thời gian cụ thể là 9 giờ tối
-        calendar.set(Calendar.HOUR_OF_DAY, 21); // 21 là 9 giờ tối
-        calendar.set(Calendar.MINUTE, 10);
+        calendar.set(Calendar.HOUR_OF_DAY, 13); // 21 là 9 giờ tối
+        calendar.set(Calendar.MINUTE, 52);
         calendar.set(Calendar.SECOND, 0);
 
 // Nếu thời gian đã qua 9 giờ tối, thì đặt cho ngày mai
@@ -101,20 +100,8 @@ public class camera extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode == RESULT_OK) {
            imageView.setImageURI(image);
+
         }
 
-    }
-
-    private void createNotificationChannels() {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            CharSequence name = "Thông báo chụp hình";
-            String description = "Tới giờ chụp hình rồi bạn ơiiiii";
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel("Thông báo", name, importance);
-            channel.setDescription(description);
-
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannels(Collections.singletonList(channel));
-        }
     }
 }
